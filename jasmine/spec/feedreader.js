@@ -90,7 +90,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 		it('are exist', function(){
-			expect($('.entry').length).toBeGreaterThan(0);
+			expect($('.feed .entry').length).toBeGreaterThan(0);
 		});
 	});
 
