@@ -80,25 +80,25 @@ $(function() {
 	});
 
     describe('New Feed Selection', function(){
+		var previousFeed, newFeed;
 
 		beforeEach(function(done) {
-			loadFeed(1, done);
+			loadFeed(0, function(){
+				previousFeed = $('.entry').html();
+				loadFeed(1, function(){
+					newFeed = $('.entry').html();
+					done();
+				});
+			});
 		});
 
-		/* Get a new feed content: */
-		const newFeed = $('.entry').html();
-
-		/* Get a previous feed content: */
- 		function previousFeed(){
-			loadFeed(0);
-			return $('.entry').html();
-		};
-		
-        /* A test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         */
-		 it('has new content', function(){
+		/* A test than ensures when the loadFeed
+		function is called and completes its work, content
+		really changes: 
+		*/
+		 it('has new content', function(done){
 			 expect(newFeed).not.toEqual(previousFeed);
+			done();
 		 });
 	});
 }());
