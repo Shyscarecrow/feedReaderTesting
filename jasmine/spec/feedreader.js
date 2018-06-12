@@ -44,12 +44,13 @@ $(function() {
 	});
 
     describe('The menu', function(){
+	const $body = $('body');
 
         /* A test that ensures the menu element is
          * hidden by default:
 		*/
 		it('is hidden by default', function(){
-			expect($('body').hasClass('menu-hidden')).toBe(true);
+			expect($body.hasClass('menu-hidden')).toBe(true);
 		});
 
          /* TODO: Write a test that ensures the menu changes
@@ -57,9 +58,9 @@ $(function() {
           */
 		it('displays and hides when clicked', function(){
 			$('.menu-icon-link').click();
-			expect($('body').hasClass('menu-hidden')).not.toBe(true);
+			expect($body.hasClass('menu-hidden')).not.toBe(true);
 			$('.menu-icon-link').click();
-			expect($('body').hasClass('menu-hidden')).toBe(true);
+			expect($body.hasClass('menu-hidden')).toBe(true);
 		});
 	});
 
