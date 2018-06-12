@@ -86,12 +86,12 @@ $(function() {
 		});
 
 		/* Get a new feed content: */
-		const newFeed = $('.entry').html;
+		const newFeed = $('.entry').html();
 
 		/* Get a previous feed content: */
  		function previousFeed(){
 			loadFeed(0);
-			return $('.entry').html;
+			return $('.entry').html();
 		};
 		
         /* A test that ensures when a new feed is loaded
